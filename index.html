@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Gacha!</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <button id="myPokemonBtn" class="my-pokemon-btn" type="button">
+        My Pokemon
+      </button>
+      <h1 class="title">Pokemon Gacha!</h1>
+    </header>
+
+    <div id="pokeBox" class="pokeball">
+      <p class="pokeball-info">↓↓↓ Click me! ↓↓↓</p>
+      <button type="button" id="pokeBtn" class="pokeball-btn">
+        <img src="assets/pokeball.png" alt="포켓몬 볼" class="pokeball-img" />
+      </button>
+    </div>
+
+    <div id="resultBox" class="result is-hidden"></div>
+
+    <div id="modal" class="modal is-hidden">
+      <div class="modal-header">
+        <h2 class="modal-title">
+          My Pokemon<span id="currentMode" class="normal-mode"
+            >Normal Mode</span
+          >
+        </h2>
+        <div class="modal-btns">
+          <button id="modeBtn" class="modal-btn mode-btn" type="button">
+            Delete Mode
+          </button>
+          <button id="resetBtn" class="modal-btn reset-btn" type="button">
+            Reset
+          </button>
+        </div>
+      </div>
+      <button
+        type="button"
+        id="modalCloseBtn"
+        class="close-btn modal-close-btn"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="pokemonContainer" class="modal-content"></div>
+    </div>
+
+    <div id="overlay" class="overlay is-hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

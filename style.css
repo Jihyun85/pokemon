@@ -1,0 +1,263 @@
+@font-face {
+  font-family: "DungGeunMo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "DungGeunMo", Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+button {
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  font-family: "DungGeunMo", Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.my-pokemon-btn {
+  font-size: 20px;
+  transition: color 200ms ease-in-out;
+}
+
+.my-pokemon-btn:hover {
+  color: red;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.pokeball {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pokeball-info {
+  font-size: 36px;
+}
+
+.pokeball-btn {
+  width: 200px;
+  height: 200px;
+}
+
+.pokeball-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result {
+  position: relative;
+  width: 400px;
+  background-color: #37beb0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.result-img {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+  border: 20px solid #37beb0;
+  background-color: white;
+  overflow: hidden;
+}
+
+.result-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result-info {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 40px 0;
+}
+
+.result-item {
+  display: flex;
+  font-size: 24px;
+}
+
+.result-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.result-item dt {
+  font-weight: 600;
+}
+
+.result-item dt:after {
+  content: ":";
+  margin-right: 15px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 80vw;
+  height: 40vh;
+  padding: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 30;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-right: 100px;
+  margin-bottom: 20px;
+}
+
+.modal-title span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.modal-title span::before {
+  content: ":";
+  margin: 0 5px;
+}
+
+.modal-btn {
+  padding: 5px;
+  border: 1px dashed black;
+  font-size: 16px;
+}
+
+.modal-img {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  background-color: indigo;
+}
+
+.modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-close-btn {
+  top: 10px;
+  right: 20px;
+}
+
+.shake-ball {
+  animation: moveBall 500ms ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.normal-mode {
+  color: blue;
+}
+
+.delete-mode {
+  color: red;
+}
+
+.modal-img-delete {
+  position: relative;
+  cursor: pointer;
+}
+
+.modal-img-delete::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "X";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 40px;
+}
+
+.modal-img-delete:hover::after {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+@keyframes moveBall {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(5px);
+  }
+  66% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translate(-0px);
+  }
+}
